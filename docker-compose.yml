@@ -1,0 +1,50 @@
+version: "3"
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+
+  zookeeper:
+    image: "bitnami/zookeeper:3.7"
+    ports:
+      - "2181:2181"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    networks:
+      - app-tier
+    logging:
+      driver: none
+
+  kafka:
+    image: "bitnami/kafka:2"
+    logging:
+      driver: none
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      - KAFKA_BROKER_ID=1
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://34.145.213.120:9093
+      - KAFKA_INTER_BROKER_LISTENER_NAME=CLIENT
+    depends_on:
+      - zookeeper
+    networks:
+      - app-tier
+
+  stream:
+    build:
+      context: ./
+      dockerfile: ./stream/Dockerfile
+    entrypoint: ["python3", "kafka.py"]
+    environment:
+      KAFKA_IP: localhost
+      KAFKA_PORT: 9092
+      KAFKA_TOPIC: "car_data"
+    networks:
+      - app-tier
