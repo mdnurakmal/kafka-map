@@ -55,7 +55,7 @@ services:
     tty: true
     environment:
       KAFKA_IP: kafka1
-      KAFKA_PORT: 9092
+      KAFKA_PORT: 19092
       KAFKA_TOPIC: "car_data"
     depends_on:
       - kafka1
