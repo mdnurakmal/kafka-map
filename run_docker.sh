@@ -10,4 +10,4 @@ echo Starting Docker containers
 docker-compose up -d kowl
 docker-compose up -d stream
 
-docker ps -a | grep Exit
+sudo docker ps -a | grep Exit
