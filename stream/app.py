@@ -1,5 +1,6 @@
 from kafka import KafkaProducer
 import kafka_utils
+import os
 from confluent_kafka.admin import AdminClient, NewTopic
 KAFKA_IP = os.getenv('KAFKA_IP', 'localhost')
 KAFKA_PORT = os.getenv('KAFKA_PORT', '9092')
