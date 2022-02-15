@@ -2,6 +2,9 @@
 Run script
 sudo sh run_docker.sh
 
+View exited containers
+docker ps -a | grep Exit
+
 Bash into container
 sudo docker exec -it <mycontainer> /bin/bash
 
