@@ -7,7 +7,7 @@ KAFKA_TOPIC = os.getenv('KAFKA_TOPIC', 'car_data')
 
 
 admin_client = AdminClient({
-    "bootstrap.servers": "localhost:9092"
+    "bootstrap.servers": KAFKA_IP+':'+KAFKA_PORT
 })
 
 topic_list = []
