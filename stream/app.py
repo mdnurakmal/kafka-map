@@ -1,5 +1,5 @@
 from kafka import KafkaProducer
-import kafka_utils
+
 import os
 
 from kafka.admin import KafkaAdminClient, NewTopic

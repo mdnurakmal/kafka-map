@@ -57,7 +57,7 @@ services:
       dockerfile: ./stream/Dockerfile
     tty: true
     environment:
-      KAFKA_IP: CLIENT://localhost
+      KAFKA_IP: localhost
       KAFKA_PORT: 9092
       KAFKA_TOPIC: "car_data"
     networks:
