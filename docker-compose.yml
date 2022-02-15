@@ -19,7 +19,8 @@ services:
 
   kowl:
     image: "quay.io/cloudhut/kowl:master"
-    network_mode: host
+    networks:
+      - app-tier
     tty: true
     ports:
       - "8080:8080"
