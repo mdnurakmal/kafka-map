@@ -24,7 +24,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - KAFKA_BROKERS=localhost:9092
+      - KAFKA_BROKERS=kafka:9092
     logging:
       driver: none
 
@@ -55,7 +55,7 @@ services:
       dockerfile: ./stream/Dockerfile
 
     environment:
-      KAFKA_IP: localhost
+      KAFKA_IP: kafka
       KAFKA_PORT: 9092
       KAFKA_TOPIC: "car_data"
     networks:
