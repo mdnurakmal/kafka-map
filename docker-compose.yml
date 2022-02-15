@@ -41,7 +41,7 @@ services:
     build:
       context: ./
       dockerfile: ./stream/Dockerfile
-    entrypoint: ["python3", "./stream/app.py"]
+    entrypoint: ["python3", "./app.py"]
     environment:
       KAFKA_IP: localhost
       KAFKA_PORT: 9092
