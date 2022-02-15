@@ -45,7 +45,7 @@ services:
     logging:
       driver: none
     depends_on:
-    - kafka
+    - kafka1
 
 
   stream:
@@ -58,7 +58,7 @@ services:
       KAFKA_PORT: 9092
       KAFKA_TOPIC: "car_data"
     depends_on:
-      - kafka
+      - kafka1
     logging:
       driver: "json-file"
       options:
