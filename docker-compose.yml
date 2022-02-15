@@ -17,6 +17,18 @@ services:
     logging:
       driver: none
 
+  kowl:
+    image: "https://quay.io/cloudhut/kowl:master"
+    ports:
+      - "8080:8080"
+    environment:
+      - KAFKA_BROKERS=localhost:9092
+    networks:
+      - app-tier
+    logging:
+      driver: none
+
+
   kafka:
     image: "bitnami/kafka:2"
     logging:
