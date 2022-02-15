@@ -1,3 +1,5 @@
+git pull
+
 echo Killing old Docker processes
 docker-compose rm -fs
 
