@@ -27,6 +27,8 @@ services:
       - KAFKA_BROKERS=kafka:9092
     logging:
       driver: none
+    depends_on:
+    - kafka
 
 
   kafka:
