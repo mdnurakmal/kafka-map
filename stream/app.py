@@ -20,6 +20,7 @@ topic_list = []
 topic_list.append(NewTopic(name=KAFKA_TOPIC, num_partitions=1, replication_factor=1))
 admin_client.create_topics(new_topics=topic_list, validate_only=False)
 
-producer = KafkaProducer(bootstrap_servers=KAFKA_IP+':'+KAFKA_PORT, api_version=(7,0,1),  value_serializer=JsonSerializer.serialize,client_id='test')
+print(KAFKA_IP+':'+KAFKA_PORT)
+producer = KafkaProducer(bootstrap_servers=KAFKA_IP+':'+KAFKA_PORT)
 producer.send(KAFKA_TOPIC, b'Hello, World!')
 producer.send(KAFKA_TOPIC, key=b'message-two', value=b'This is Kafka-Python')
