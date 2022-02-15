@@ -40,7 +40,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - KAFKA_BROKERS=PLAINTEXT://kafka1:19092
+      - KAFKA_BROKERS=kafka1:19092
     logging:
       driver: none
     depends_on:
