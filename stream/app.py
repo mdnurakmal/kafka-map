@@ -4,12 +4,12 @@ import os
 
 from kafka.admin import KafkaAdminClient, NewTopic
 
-print(KAFKA_IP+':'+KAFKA_PORT)
+
 KAFKA_IP = os.getenv('KAFKA_IP')
 KAFKA_PORT = os.getenv('KAFKA_PORT')
 KAFKA_TOPIC = os.getenv('KAFKA_TOPIC')
 
-
+print(KAFKA_IP+':'+KAFKA_PORT)
 
 admin_client = KafkaAdminClient(
     bootstrap_servers=KAFKA_IP+':'+KAFKA_PORT, 
