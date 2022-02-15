@@ -18,7 +18,7 @@ services:
       driver: none
 
   kowl:
-    image: "https://quay.io/cloudhut/kowl:master"
+    image: "quay.io/cloudhut/kowl:master"
     ports:
       - "8080:8080"
     environment:
