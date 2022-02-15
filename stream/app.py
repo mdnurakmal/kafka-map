@@ -1,19 +1,19 @@
 from kafka import KafkaProducer
-from kafka.admin import KafkaAdminClient, NewTopic
-
-
+from confluent_kafka.admin import AdminClient, NewTopic
 KAFKA_IP = os.getenv('KAFKA_IP', 'localhost')
 KAFKA_PORT = os.getenv('KAFKA_PORT', '9092')
 KAFKA_TOPIC = os.getenv('KAFKA_TOPIC', 'car_data')
 
-admin_client = KafkaAdminClient(
-    bootstrap_servers=KAFKA_IP+':'+KAFKA_PORT, 
-    client_id='test'
-)
+
+
+admin_client = AdminClient({
+    "bootstrap.servers": "localhost:9092"
+})
 
 topic_list = []
-topic_list.append(NewTopic(name=KAFKA_TOPIC, num_partitions=1, replication_factor=1))
-admin_client.create_topics(new_topics=topic_list, validate_only=False)
+topic_list.append(NewTopic(KAFKA_TOPIC, 1, 1))
+admin_client.create_topics(topic_list)
+
 
 
 
