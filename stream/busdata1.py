@@ -4,6 +4,7 @@ import json
 from datetime import datetime
 import uuid
 import time
+import os
 
 KAFKA_IP = os.getenv('KAFKA_IP')
 KAFKA_PORT = os.getenv('KAFKA_PORT')
