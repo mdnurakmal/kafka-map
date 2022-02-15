@@ -18,5 +18,5 @@ admin_client.create_topics(topic_list)
 
 
 producer = KafkaProducer(bootstrap_servers=KAFKA_IP+':'+KAFKA_PORT)
-producer.send('sample', b'Hello, World!')
-producer.send('sample', key=b'message-two', value=b'This is Kafka-Python')
+producer.send(KAFKA_TOPIC, b'Hello, World!')
+producer.send(KAFKA_TOPIC, key=b'message-two', value=b'This is Kafka-Python')
