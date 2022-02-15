@@ -29,6 +29,6 @@ admin_client.create_topics(topic_list)
 
 print(KAFKA_IP+':'+KAFKA_PORT)
 
-p = Producer({'bootstrap.servers': KAFKA_IP:KAFKA_PORT})
+p = Producer({'bootstrap.servers': KAFKA_IP+":"+KAFKA_PORT})
 p.produce('mytopic', "test", callback=delivery_report)
 p.flush()
