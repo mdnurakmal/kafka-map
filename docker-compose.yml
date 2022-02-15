@@ -34,7 +34,7 @@ services:
     depends_on:
       - zoo1
 
-   kowl:
+  kowl:
     image: quay.io/cloudhut/kowl:v1.4.0
     restart: on-failure
     hostname: kowl
