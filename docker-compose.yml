@@ -56,6 +56,7 @@ services:
       context: ./
       dockerfile: ./stream/Dockerfile
     tty: true
+    command: tail -F anything
     environment:
       KAFKA_IP: localhost
       KAFKA_PORT: 9092
