@@ -47,7 +47,6 @@ def generate_checkpoint(coordinates):
         print(message)
         p.produce('mytopic', message.encode('ascii'), callback=delivery_report)
 
-        producer.produce(message.encode('ascii'))
         time.sleep(1)
 
         #if bus reaches last coordinate, start from beginning
