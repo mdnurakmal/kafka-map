@@ -5,9 +5,9 @@ import os
 from kafka.admin import KafkaAdminClient, NewTopic
 
 
-KAFKA_IP = os.getenv('KAFKA_IP', 'localhost')
-KAFKA_PORT = os.getenv('KAFKA_PORT', '9092')
-KAFKA_TOPIC = os.getenv('KAFKA_TOPIC', 'car_data')
+KAFKA_IP = os.getenv('KAFKA_IP')
+KAFKA_PORT = os.getenv('KAFKA_PORT')
+KAFKA_TOPIC = os.getenv('KAFKA_TOPIC')
 
 
 
