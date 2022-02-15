@@ -37,10 +37,11 @@ services:
   kowl:
     image: "quay.io/cloudhut/kowl:master"
     tty: true
+    network_mode: host
     ports:
       - "8080:8080"
     environment:
-      - KAFKA_BROKERS=kafka1:19092
+      - KAFKA_BROKERS=localhost:9092
     logging:
       driver: none
     depends_on:
