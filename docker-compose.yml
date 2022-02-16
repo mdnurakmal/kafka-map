@@ -71,7 +71,7 @@ services:
       context: ./
       dockerfile: ./frontend/Dockerfile
     environment:
-      KAFKA_IP: ${DOCKER_HOST_IP:-127.0.0.1}
+      KAFKA_IP: kafka1
       KAFKA_PORT: 9092
     ports:
     - "5000:5000"
