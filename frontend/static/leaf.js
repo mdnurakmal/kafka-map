@@ -11,7 +11,7 @@ mapMarkers1 = [];
 mapMarkers2 = [];
 mapMarkers3 = [];
 
-var source = new EventSource('/topic/myyopic'); //ENTER YOUR TOPICNAME HERE
+var source = new EventSource('/topic/mytopic'); //ENTER YOUR TOPICNAME HERE
 source.addEventListener('message', function(e){
 
   console.log('Message');
