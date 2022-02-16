@@ -6,6 +6,5 @@ WORKDIR /app
 # Install packages
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT [ "python" ]
 
-CMD [ "app.py" ]
+CMD ["sleep", "60s", "&&", "python"."app.py"]
