@@ -75,6 +75,8 @@ services:
       KAFKA_PORT: 9092
     ports:
     - "5000:5000"
+    hostname: frontend
+    container_name: frontend
     depends_on:
       - stream
     logging:
