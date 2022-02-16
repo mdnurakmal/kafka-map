@@ -14,9 +14,6 @@ c = Consumer({
 
 c.subscribe(['mytopic'])
 
-def get_kafka_client():
-    return KafkaClient(hosts=KAFKA_IP+':'+KAFKA_PORT)
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -26,8 +23,6 @@ def index():
 #Consumer API
 @app.route('/topic/<topicname>')
 def get_messages(topicname):
-    def events():
-        yield 'data:{0}\n\n'.format(msg.value().decode('utf-8'))
 
     msg = c.poll(1.0)
 
@@ -39,6 +34,8 @@ def get_messages(topicname):
         else:
             print('Received message: {}'.format(msg.value().decode('utf-8')))
             return Response('data:{0}\n\n'.format(msg.value().decode('utf-8')), mimetype="text/event-stream")
+    
+    return Response('data:{0}\n\n'.format(""), mimetype="text/event-stream")
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
