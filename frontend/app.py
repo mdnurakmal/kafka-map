@@ -2,6 +2,8 @@ from flask import Flask, render_template, Response
 from confluent_kafka import Consumer
 
 import os
+import time
+time.sleep(10)   # Delays for 5 seconds. You can also use a float value.
 
 KAFKA_IP = os.getenv('KAFKA_IP')
 KAFKA_PORT = os.getenv('KAFKA_PORT')
