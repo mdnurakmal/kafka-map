@@ -53,8 +53,8 @@ services:
       dockerfile: ./stream/Dockerfile
     tty: true
     environment:
-      KAFKA_IP: PLAINTEXT://kafka1
-      KAFKA_PORT: 19092
+      KAFKA_IP: ${DOCKER_HOST_IP:-127.0.0.1}
+      KAFKA_PORT: 9092
       KAFKA_TOPIC: "car_data"
     depends_on:
       - kafka1
@@ -71,8 +71,8 @@ services:
       context: ./
       dockerfile: ./frontend/Dockerfile
     environment:
-      KAFKA_IP: localhost
-      KAFKA_PORT: 9092
+      KAFKA_IP: PLAINTEXT://kafka1
+      KAFKA_PORT: 19092
     ports:
     - "5000:5000"
     depends_on:
