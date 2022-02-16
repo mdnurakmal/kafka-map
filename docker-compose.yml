@@ -66,6 +66,10 @@ services:
         labels: "production_status"
         env: "os"
 
+  temp:
+    image: curlimages/curl
+    tty: true
+    
   frontend:
     build:
       context: ./
