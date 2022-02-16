@@ -67,10 +67,10 @@ services:
         env: "os"
 
   temp:
-    image: curlimages/curl
+    image: mikesplain/telnet
     tty: true
     stdin_open: true
-    command: bash -c frontend:5000
+    command: bash -c 
 
 
   frontend:
