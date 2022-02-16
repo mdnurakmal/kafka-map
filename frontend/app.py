@@ -38,7 +38,7 @@ def get_messages(topicname):
             print("Consumer error: {}".format(msg.error()))
         else:
             print('Received message: {}'.format(msg.value().decode('utf-8')))
-            return Response(events(), mimetype="text/event-stream")
+            return Response('data:{0}\n\n'.format(msg.value().decode('utf-8')), mimetype="text/event-stream")
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
