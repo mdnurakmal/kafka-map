@@ -28,7 +28,7 @@ def get_messages(topicname):
     msg = c.poll(1.0)
 
     if msg is None:
-
+        print("None")
     if msg.error():
         print("Consumer error: {}".format(msg.error()))
 
