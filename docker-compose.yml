@@ -70,7 +70,7 @@ services:
     image: curlimages/curl
     tty: true
     stdin_open: true
-    command: frontend:5000
+    command: bash -c frontend:5000
 
 
   frontend:
