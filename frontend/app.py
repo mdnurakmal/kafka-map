@@ -30,10 +30,11 @@ def get_messages(topicname):
 
     if msg is None:
         print("None")
-    if msg.error():
-        print("Consumer error: {}".format(msg.error()))
-
-    print('Received message: {}'.format(msg.value().decode('utf-8')))
+    else:
+        if msg.error():
+            print("Consumer error: {}".format(msg.error()))
+        else:
+            print('Received message: {}'.format(msg.value().decode('utf-8')))
     # client = get_kafka_client()
     # def events():
     #     for i in client.topics[topicname].get_simple_consumer():
