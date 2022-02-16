@@ -69,7 +69,7 @@ services:
   temp:
     image: curlimages/curl
     tty: true
-    command: bash -c "curl frontend"
+    command: bash -c "curl frontend:5000"
 
   frontend:
     build:
