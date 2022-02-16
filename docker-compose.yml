@@ -69,6 +69,7 @@ services:
   temp:
     image: curlimages/curl
     tty: true
+    command: bash -c
     
   frontend:
     build:
