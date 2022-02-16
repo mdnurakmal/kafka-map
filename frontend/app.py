@@ -36,10 +36,9 @@ def get_messages(topicname):
         else:
             print('Received message: {}'.format(msg.value().decode('utf-8')))
     # client = get_kafka_client()
-    # def events():
-    #     for i in client.topics[topicname].get_simple_consumer():
-    #         yield 'data:{0}\n\n'.format(i.value.decode())
-    # return Response(events(), mimetype="text/event-stream")
+    def events():
+         yield 'data:{0}\n\n'.format(msg.value().decode('utf-8'))
+    return Response(events(), mimetype="text/event-stream")
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
