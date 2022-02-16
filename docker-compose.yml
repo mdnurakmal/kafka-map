@@ -72,7 +72,7 @@ services:
       dockerfile: ./frontend/Dockerfile
     environment:
       KAFKA_IP: PLAINTEXT://kafka1
-      KAFKA_PORT: 19092
+      KAFKA_PORT: 9092
     ports:
     - "5000:5000"
     logging:
