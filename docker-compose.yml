@@ -79,7 +79,7 @@ services:
       dockerfile: ./frontend/Dockerfile
     environment:
       KAFKA_IP: kafka1
-      KAFKA_PORT: 9092
+      KAFKA_PORT: 19092
     ports:
     - "5000:5000"
     hostname: frontend
