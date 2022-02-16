@@ -26,8 +26,8 @@ def index():
 #Consumer API
 @app.route('/topic/<topicname>')
 def get_messages(topicname):
-     def events():
-         yield 'data:{0}\n\n'.format(msg.value().decode('utf-8'))
+    def events():
+        yield 'data:{0}\n\n'.format(msg.value().decode('utf-8'))
 
     msg = c.poll(1.0)
 
