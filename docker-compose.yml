@@ -65,3 +65,18 @@ services:
         max-file: "3"
         labels: "production_status"
         env: "os"
+
+  frontend:
+    build:
+      context: ./
+      dockerfile: ./frontend/Dockerfile
+    environment:
+      KAFKA_IP: PLAINTEXT://kafka1
+      KAFKA_PORT: 19092
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: "3"
+        labels: "production_status"
+        env: "os"
