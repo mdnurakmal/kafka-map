@@ -23,5 +23,5 @@ def get_messages(topicname):
             yield 'data:{0}\n\n'.format(i.value.decode())
     return Response(events(), mimetype="text/event-stream")
 
-if __name == '__main__':
+if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
