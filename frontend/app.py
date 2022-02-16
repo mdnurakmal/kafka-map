@@ -7,7 +7,7 @@ KAFKA_IP = os.getenv('KAFKA_IP')
 KAFKA_PORT = os.getenv('KAFKA_PORT')
 
 c = Consumer({
-    'bootstrap.servers': 'kafka1',
+    'bootstrap.servers': KAFKA_IP+":"+KAFKA_PORT,
     'group.id': 'mygroup',
     'auto.offset.reset': 'earliest'
 })
