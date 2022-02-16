@@ -7,7 +7,7 @@ time.sleep(10)   # Delays for 5 seconds. You can also use a float value.
 
 KAFKA_IP = os.getenv('KAFKA_IP')
 KAFKA_PORT = os.getenv('KAFKA_PORT')
-
+print(KAFKA_IP)
 c = Consumer({
     'bootstrap.servers': KAFKA_IP+":"+KAFKA_PORT,
     'group.id': 'mygroup',
