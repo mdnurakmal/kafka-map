@@ -1,4 +1,5 @@
 git pull
+docker system prune -a
 
 echo Killing old Docker processes
 docker-compose rm -fs
