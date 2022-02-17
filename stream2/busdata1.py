@@ -34,7 +34,7 @@ p = Producer({'bootstrap.servers': KAFKA_IP+":"+KAFKA_PORT})
 
 #CONSTRUCT MESSAGE AND SEND IT TO KAFKA
 data = {}
-data['busline'] = '00001'
+data['busline'] = '00002'
 
 def generate_checkpoint(coordinates):
     i = 0
