@@ -65,6 +65,25 @@ services:
         max-file: "3"
         labels: "production_status"
         env: "os"
+  
+  stream2:
+    build:
+      context: ./
+      dockerfile: ./stream2/Dockerfile
+    tty: true
+    environment:
+      KAFKA_IP: PLAINTEXT://kafka1
+      KAFKA_PORT: 19092
+      KAFKA_TOPIC: "car_data"
+    depends_on:
+      - kafka1
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: "3"
+        labels: "production_status"
+        env: "os"
 
   temp:
     image: mikesplain/telnet
