@@ -1,6 +1,6 @@
 FROM python:3.8
 
-COPY /stream /app/
+COPY /stream2 /app/
 WORKDIR /app
 
 # Install packages
