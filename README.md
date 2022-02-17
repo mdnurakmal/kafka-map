@@ -1,4 +1,12 @@
 # kafka-map
+
+## Fresh VM
+sudo apt-get update -y
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo apt install docker-compose -y
+git clone https://github.com/mdnurakmal/kafka-map.git
+
 ## Run script
 sudo sh run_docker.sh
 

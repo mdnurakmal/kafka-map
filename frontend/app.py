@@ -39,7 +39,13 @@ def get_messages(topicname):
     
     return Response('data:{0}\n\n'.format(""), mimetype="text/event-stream")
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+def main():
+    try:
+        app.run(debug=True, host='0.0.0.0')
+    finally:
+        c.close()
 
-c.close()
+
+if __name__ == '__main__':
+    main()
+
